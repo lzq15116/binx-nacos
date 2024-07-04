@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient("blog-service")
 public interface BlogServiceClient {
 
-    @GetMapping("/list/{id}")
+    @GetMapping("blog/list/{id}")
     String list(@PathVariable("id") String id);
 
 }

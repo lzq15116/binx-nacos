@@ -1,6 +1,5 @@
 package com.xisthebest.blogservice.controller;
 
-import com.tencentcloudapi.apigateway.v20180808.models.Environment;
 import com.xisthebest.blogservice.entity.Blog;
 import com.xisthebest.blogservice.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
