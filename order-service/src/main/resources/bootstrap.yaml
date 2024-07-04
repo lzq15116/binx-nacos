@@ -1,32 +1,18 @@
 spring:
   application:
     name: order-service
-  profiles:
-    active: dev
   config:
-    import: nacos:81.70.33.19:8848
+    import: nacos:order-service-dev
   cloud:
     nacos:
-      config:
-        import-check:
-          enabled: false
+      config: # 配置中心
+        # 配置中心服务器地址
         server-addr: 81.70.33.19:8848
-        name: nacos
-        password: nacos
         namespace: 3f6704be-64d3-4856-95c5-9bf08982fd06
-        group: DEFAULT_GROUP
+        prefix: application
         file-extension: yaml
-        extension-configs[0]:
-          data-id: order-service-dev
-          group: DEFAULT_GROUP
-          refresh: true
-        extension-configs[1]:
-          data-id: binx-nacos
-          group: DEFAULT_GROUP
-          refresh: true
-        refreshable-dataids:
-          - order-service-dev
-          - binx-nacos
+        extension-configs:
+          - data-id: order-service-dev
       discovery:
         server-addr: 81.70.33.19:8848
         register-enabled: true
@@ -34,18 +20,16 @@ spring:
       server-addr: 81.70.33.19:8848
 
 
-  datasource:
-    url: jdbc:mysql://81.70.33.19:3306/binx
-    username: root
-    password: Ll625531646lL
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#  datasource:
+#    url: jdbc:mysql://81.70.33.19:3306/binx
+#    username: root
+#    password: Ll625531646lL
+#    driver-class-name: com.mysql.cj.jdbc.Driver
 
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 
-  server:
-    port: 3301
 
   ttname: 3qwdasdisajdiaksmdas
 
