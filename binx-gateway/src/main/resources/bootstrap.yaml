@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: binx-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 81.70.33.19:8848
+        register-enabled: true
+        namespace: 3f6704be-64d3-4856-95c5-9bf08982fd06
+      server-addr: 81.70.33.19:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: order_route
+          uri: lb://order-service
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - StripPrefix=1
+
+        - id: blog_route
+          uri: lb://blog-service
+          predicates:
+            - Path=/blog-service/**
+          filters:
+            - StripPrefix=1
+
+
+
+server:
+  port: 5001
