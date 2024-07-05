@@ -8,4 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements BlogService {
+    @Override
+    public void iSave(Blog blog) {
+        System.out.println(1/0);
+        save(blog);
+    }
 }

@@ -19,19 +19,24 @@ spring:
         namespace: 3f6704be-64d3-4856-95c5-9bf08982fd06
       server-addr: 81.70.33.19:8848
 
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: test_save_order_group
+  service:
+    vgroup-mapping:
+      test_save_order_group: default
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 81.70.33.19:8848
+      username: nacos
+      password: nacos
+      group: DEFAULT_GROUP
+      cluster: default
+      namespace: 3f6704be-64d3-4856-95c5-9bf08982fd06
 
-#  datasource:
-#    url: jdbc:mysql://81.70.33.19:3306/binx
-#    username: root
-#    password: Ll625531646lL
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-
-#mybatis-plus:
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
-
-
-  ttname: 3qwdasdisajdiaksmdas
 
 
 
