@@ -7,7 +7,7 @@
         <groupId>com.xisthebest</groupId>
         <artifactId>binx-nocos</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath>../../binx-nocos</relativePath>
     </parent>
 
     <groupId>com.xisthebest</groupId>
@@ -90,10 +90,14 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
     </dependencies>

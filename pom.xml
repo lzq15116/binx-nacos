@@ -13,6 +13,7 @@
     <modules>
         <module>order-service</module>
         <module>blog-service</module>
+        <module>binx-gateway</module>
     </modules>
 
     <parent>
